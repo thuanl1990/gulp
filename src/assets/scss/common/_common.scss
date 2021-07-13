@@ -1,0 +1,173 @@
+.container {
+	position: relative;
+	width: $container + $container-padding * 2;
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 0 $container-padding;
+	z-index: 1;
+
+	@include media(set-max-w, $xl) {
+		width: $container-xl + $container-padding * 2;
+	}
+	@include media(set-max-w, $lg) {
+		width: $container-lg + $container-padding * 2;
+	}
+	@include media(set-max-w, $md) {
+		width: $container-md + $container-padding * 2;
+	}
+	@include media(set-max-w, $sm) {
+		width: $container-sm + $container-padding * 2;
+		padding: 0 15px;
+	}
+	@include media(set-max-w, $xs) {
+		width: $container-xs + $container-padding * 2;
+	}
+}
+
+.w-100 {
+	width: 100% !important;
+}
+
+.h-100 {
+	height: 100% !important;
+}
+
+.relative {
+	position: relative;
+}
+
+.disabled {
+    opacity: .2;
+    pointer-events: none;
+}
+
+.radius-10 {
+	border-radius: 10px;
+}
+
+.bg-white {
+	background-color: white;
+}
+
+// text
+
+.font-15 {
+	font-size: 15px;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.font-bold {
+	font-weight: 700;
+}
+
+.font-black {
+	font-weight: 900;
+}
+
+.txt-gradient {
+	text-transform: uppercase;
+	font-weight: 700;
+	display: inline-block;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-image: linear-gradient(120deg, #e60012, #e53764, #ff8e44 80%);
+}
+.bg-gradient {
+	display: inline-block;
+	text-align: center;
+	background-image: linear-gradient(120deg, #e60012, #e53764, #ff8e44 80%);
+	color: $white;
+}
+
+
+
+@for $i from 1 through 60 {
+	.mt-#{$i} {
+		margin-top: #{$i}px;
+	}
+	.mb-#{$i} {
+		margin-bottom: #{$i}px;
+	}
+    @include media(set-max-w, $sm) {
+        .mt-sm-#{$i} {
+            margin-top: #{$i}px;
+        }
+        .mb-sm-#{$i} {
+            margin-bottom: #{$i}px;
+        }
+    }
+}
+
+.ml-auto {
+	margin-left: auto;
+}
+
+.mx-auto {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// show hide 
+
+.sp {
+	display: none;
+}
+.tb {
+	display: none;
+}
+.pc {
+	display: block;
+}
+
+@include media(set-max-w, $md) {
+	.pc {
+		display: none;
+	}
+	.tb {
+		display: block;
+	}
+}
+
+@include media(set-max-w, $sm) {
+	.tb {
+		display: none;
+	}
+	.sp {
+		display: block;
+	} 
+}
+
+.bg-dots {
+	@include bgDots
+}
+
+.back {
+    .btn {
+        max-width: 445px;
+
+        @include media(set-max-w, $sm) {
+            max-width: 100%;
+        }
+    }
+}
+
+// icon 
+
+.chevron.down {
+    @include chevron(4px, 2px, #2e2e2e, down);
+    
+    @include media(set-max-w, $sm) {
+        @include chevron(3px, 2px, #2e2e2e, down);
+    }
+}

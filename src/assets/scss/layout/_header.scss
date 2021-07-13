@@ -1,0 +1,64 @@
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    z-index: 999;
+
+    @include media(set-max-w, $lg) {
+        padding: 13px 0;
+    }
+    &-inner {
+        position: relative;
+        width: 1920px;
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        padding-left: 110px;
+        padding-right: 120px;
+
+        @include media(set-max-w, 1600) {
+            padding: 0 20px;
+        }
+        @include media(set-max-w, $sm) {
+            padding-left: 20px;
+        }
+    }
+    .logo {
+        display: block;
+
+        @include media(set-max-w, 1400) {
+            width: 180px;
+        }   
+        @include media(set-max-w, $md) {
+        }
+    }
+}
+
+.main {
+    position: relative;
+    padding-bottom: 62px;
+    margin-top: 73px;
+
+    @include media(set-min-w, $md) {
+        padding-bottom: 90px;
+        margin-top: 70px;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 28px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 89px;
+        height: 2px;
+        background-color: #4b4b4b;
+        @include media(set-min-w, $md) {
+            bottom: 38px;
+        }
+    }
+}

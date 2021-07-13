@@ -1,0 +1,6 @@
+.breadcrumb
+    .breadcrumb-inner
+        .breadcrumb-list
+            a(href=`${subfolder}/`).breadcrumb-item.home トップ
+            each item in breadcrumb
+                a(href=`${subfolder}/${item.link}`).breadcrumb-item= item.txt

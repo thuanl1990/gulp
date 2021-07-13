@@ -1,0 +1,125 @@
+.form {
+	//margin-top: 5rem;
+
+	&-group {
+		position: relative;
+		margin-top: 40px;
+
+		&:first-child {
+			margin-top: 30px;
+		}
+		@include media(set-max-w, $sm) {
+			margin-bottom: 0;
+			margin-top: 30px;
+		}
+	}
+
+	label {
+		position: relative;
+		display: block;
+		//font-weight: 700;
+		//padding-bottom: 25px;
+
+		@include media(set-max-w, $sm) {
+			//padding-bottom: 22px;
+			font-size: 14px;
+		}
+
+		span {
+			color: #d32d2a;
+		}
+	}
+
+	&-input {
+		border: 1px solid #f4f4f4;
+		background-color: #f4f4f4;
+		font-family: YuGothic, sans-serif;
+		font-size: 18px;
+		font-weight: 500;
+		width: 100%;
+		color: #333;
+		line-height: 68px;
+		padding: 0 32px;
+		-webkit-appearance: none;
+		-moz-appearance: textfield;
+		appearance: none;
+
+		@include media(set-max-w, $sm) {
+			font-size: 14px;
+			line-height: 60px;
+			padding: 0 20px;
+		}
+
+		&:focus {
+			outline: none;
+			box-shadow:  0 0 10px rgba(51, 51, 51, 0.8);
+		}
+
+		&::placeholder {
+			color: rgba(51, 51, 51, 0.6);
+		}
+	}
+
+	&-select {
+		position: relative;
+		@extend .form-input;
+		height: 68px;
+		line-height: 68px;
+		background-color: #f4f4f4;
+		color: rgba(51, 51, 51, 0.6);
+		//overflow: hidden;
+		//background: url(../img/icon/chevron-down-dark.svg) no-repeat right 32px center / 14px #f4f4f4;
+
+		@include media(set-max-w, $sm) {
+			height: 60px;
+			line-height: 60px;
+			font-size: 14px;
+			background-position: right 16px center
+		}
+	}
+
+	&-area {
+		@extend .form-input;
+		padding: 20px 32px;
+		line-height: 1.5;
+		min-height: 330px;
+
+		@include media(set-max-w, $sm) {
+			padding: 16px;
+			min-height: 180px;
+		}
+	}
+
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	input[type="number"] {
+		-moz-appearance: textfield;
+	}
+}
+
+.error-msg {
+	display: none;
+}
+
+.error {
+	.error-msg {
+		display: block;
+		color: var(--danger);
+		font-size: 14px;
+		margin-top: 5px;
+	}
+	.form-input,
+	.form-select,
+	.form-area {
+		border-color: var(--danger);
+		color: var(--danger);
+
+		&::placeholder {
+			color: var(--danger);
+		}
+	}	
+}

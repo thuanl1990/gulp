@@ -1,0 +1,114 @@
+button {
+    appearance: none;
+}
+
+.btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    overflow: hidden;
+    width: 280px;
+    height: 80px;
+    transition: .3s ease-out;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    @include media(set-max-w, $sm) {
+        max-width: initial;
+        width: 180px;
+        height: 60px;
+    }
+
+    &.shadow {
+        box-shadow: 10px 10px 20px rgba($color: $black, $alpha: .4);
+    }
+
+    &.gray {
+        background-color: #4A4A4A;
+        border: 1px solid #4a4a4a;
+
+       .btn-txt {
+            color: $white;
+            z-index: 2;
+        }
+        &:hover {
+            background-color: #fff;
+
+            .btn-txt {
+                color: #4a4a4a;
+            }
+        }
+    }
+
+    &.yellow {
+        background-color: #F1B921;
+        border: 1px solid #F1B921;
+
+       .btn-txt {
+            color: $white;
+            z-index: 2;
+        }
+        &:hover {
+            background-color: #fff;
+
+            .btn-txt {
+                color: #F1B921;
+            }
+        }
+    }
+
+    &.full {
+        max-width: initial;
+    }
+
+    &.outline {
+        border-radius: 72px;
+        border: 1px solid;
+
+        &:hover {
+            background-color: #333;
+
+            .btn-txt {
+                color: $white;
+            }
+        }
+    }
+
+    &-txt {
+        position: relative;
+        display: block;
+        text-transform: uppercase;
+        //@include font-dina;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: initial;
+        text-align: center;
+        color: inherit;
+        white-space: nowrap;
+        border-radius: inherit;
+        transition: .3s ease-out;
+
+        @include media(set-max-w, $sm) {
+            font-size: 14px;
+        }
+
+        &.icon {
+            background-repeat: no-repeat;
+            background-position: right 18px center;
+            background-size: 15px;
+
+            @include media(set-max-w, $sm) {
+                background-position: right 10px center;
+                background-size: 12px;
+            }
+        }
+    }
+}
+
+

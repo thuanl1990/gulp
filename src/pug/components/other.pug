@@ -1,0 +1,20 @@
+.other
+    .row
+        each other in others
+            .col
+                if other.color == 'green'
+                    .other-item(style=`background-image: url(${other.img}), linear-gradient( to bottom, #18a86b 50%, #b5d98e 100%)`)
+                        .other-content
+                            .other-title= other.title
+                            .other-txt= other.txt 
+                        .other-button
+                            a(href="" class="btn dark green")
+                                span.btn-txt More
+                else     
+                    .other-item(style=`background-image: url(${other.img}), linear-gradient( to bottom, #f83600 20%, #e3b2c0 100%)` )
+                        .other-content
+                            .other-title= other.title
+                            .other-txt= other.txt 
+                        .other-button
+                            a(href="" class="btn dark green")
+                                span.btn-txt More

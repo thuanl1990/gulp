@@ -1,0 +1,23 @@
+extends ./layout/skeleton.pug
+block variable 
+	-
+		var title = ''
+	-
+		var description = ''	
+	-
+		var styles = [
+			//'https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/css/splide.min.css',
+			'@path/css/theme.css@version'
+		]
+	-
+		var scripts = [
+			//'https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/js/splide.min.js',
+			'@path/js/common.js@version'
+		]
+block content
+	include ./layout/header.pug
+	main
+		include ./top/banner.pug
+	include ./layout/footer.pug
+
+		

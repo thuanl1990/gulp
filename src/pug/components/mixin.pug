@@ -1,0 +1,29 @@
+mixin img(path, className="", alt="")
+    img(src=`@path/img/${path}`, class=`${className}`, alt=`${alt}`)
+
+mixin sectionGeneral(title, imgPC, imgSP)
+    - imgPC = imgPC || "banner-general-img.jpg"
+    - imgSP = imgSP || imgPC
+    section.section-banner-general(id="banner_general")
+        .section-banner-general__wrapper
+            .section-banner-general__img
+                picture
+                    source(media="(min-width: 992px)" srcset="@path/img/banner/" + imgPC)
+                    img.img-fluid(src="@path/img/banner/" + imgSP alt!=title)
+            .section-banner-general__content
+                .container
+                    h1.section-banner-general__title: span!= title
+
+mixin breadcrumb(endTxt, ...items)
+    nav.breadcrumb-nav(aria-label="breadcrumb")
+        ol.breadcrumb
+            li.breadcrumb-item
+                a(href='/') Home
+            each item in items
+                li.breadcrumb-item
+                    a(href='#')!= item
+            li.breadcrumb-item.active(aria-current='page')!= endTxt
+
+mixin seemore(link)
+    .seeMore
+        a(href=`${link}`) see more

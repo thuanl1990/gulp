@@ -1,0 +1,124 @@
+@mixin gradient($pos, $color1, $color2) {
+    background: $color1; /* Old browsers */
+    background: -moz-linear-gradient($pos, $color1 0%, $color2 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient($pos, $color1 0%, $color2 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient($pos, $color1 0%, $color2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color1', endColorstr='$color2', GradientType=1); /* IE6-9 */
+}
+
+$dot-size: .5px;
+$dot-space: 6px;
+$dot-color: rgba(#acacac, .5);
+
+@mixin  bgDots {
+    background:	linear-gradient(90deg, #f7f7f7 ($dot-space - $dot-size),  transparent 1%) center, 
+                linear-gradient(#f7f7f7 ($dot-space - $dot-size), transparent 1%) center, $dot-color;
+    background-size: $dot-space $dot-space;
+            
+}
+
+// breakpoint
+@mixin media($breakpoint, $max: false, $min: false) {
+    @if $breakpoint == phone {
+        @media screen and (max-width: $break-phone) {
+            @content
+        };
+    }
+    @if $breakpoint == tablet {
+        @media screen and (max-width: $break-tab-land) and (min-width: $break-tab-port) {
+            @content
+        };
+    }
+    @if $breakpoint == set-range {
+        @media screen and (max-width: $max + px) and (min-width: $min + px) {
+            @content
+        };
+    }
+    @if $breakpoint == set-max-w {
+        @media screen and (max-width: $max + px) {
+            @content
+        };
+    }
+    @if $breakpoint == set-min-w {
+        @media screen and (min-width: #{$max+1}px) {
+            @content
+        };
+    }
+    @if $breakpoint == set-max-h {
+        @media screen and (max-height: $max + px) {
+            @content
+        };
+    }
+    @if $breakpoint == set-min-h {
+        @media screen and (min-height: $max + px) {
+            @content
+        };
+    }
+}
+
+// respone ratio
+@mixin ratio($x, $y) {
+    position: relative;
+    padding-top: unquote(($y / $x) * 100 + '%')
+}
+
+// truncate text
+@mixin truncate($truncation-boundary) {
+    max-width: $truncation-boundary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin font($w, $size, $lineH, $color: false) {
+    font-weight: $w;
+    font-size: $size / 10 + rem;
+    line-height: $lineH / 10 + rem;
+    @if not false {
+        color: $color
+    }
+}
+
+// icon 
+
+@mixin chevron($width, $border, $color, $direction) {
+    border: solid $color;
+    border-width: 0 $border $border 0;
+    display: inline-block;
+    padding: $width;
+    
+    @if $direction == up {
+        transform: rotate(-135deg);
+    }
+    @else if $direction == right {
+        transform: rotate(-45deg);
+    }
+    @else if $direction == down {
+        transform: rotate(45deg);
+    }
+    @else if $direction == left {
+        transform: rotate(135deg);
+    }    
+}
+
+// device overflow 
+
+@mixin device {
+    html {
+        overflow-x: hidden;
+    }
+}
+
+@mixin wpercent($px) {
+    width: calc(#{$px} * 100% / 1440);
+
+    @include media(set-max-w, $sm) {
+        width: calc(#{$px} * 100% / 375);
+    }
+}
+
+@mixin triangle-left($w, $h, $color) {
+    border-style: solid;
+    border-width: #{$w/2}px 0 #{$w/2}px #{$h}px;
+    border-color: transparent transparent transparent $color;
+}

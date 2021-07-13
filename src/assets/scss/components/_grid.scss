@@ -1,0 +1,123 @@
+
+// flex
+
+.flex {
+	display: flex;
+}
+
+.content-center {
+	justify-content: center;
+}
+
+.content-start {
+	justify-content: flex-start;
+}
+
+.items-center {
+	align-items: center;
+}
+
+.items-start {
+	align-items: flex-start;
+}
+
+.self-center {
+	align-self: center;
+}
+
+.self-end {
+	align-self: flex-end;
+}
+
+.order-1 {
+	order: 1;
+}
+
+.order-2 {
+	order: 2;
+}
+
+.order-3 {
+	order: 3;
+}
+
+.order-4 {
+	order: 4;
+}
+
+
+
+// layout
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+
+    > .col {
+        flex: 1 0 0%;
+
+		@include media(set-max-w, $sm) {
+			flex: 1 1 100%;
+		}
+    }
+}
+
+.row-reverse {
+	flex-direction: row-reverse;
+}
+.row-reverse-sm {
+	@include media(set-max-w, $sm) {
+		flex-direction: row-reverse;
+	}
+}
+
+.nowrap {
+	flex-wrap: nowrap;
+}
+
+$gutters: 5,
+10,
+15,
+20,
+25,
+30,
+35,
+40,
+45,
+50,
+55,
+60,
+80;
+
+@each $gutter in $gutters {
+	.gx-#{$gutter} {
+		margin-left: -#{$gutter/2}px;
+		margin-right: -#{$gutter/2}px;
+
+		>* {
+			padding-left: #{$gutter/2}px;
+			padding-right: #{$gutter/2}px;
+		}
+	}
+}
+
+@for $i from 1 through 12 {
+	.col-#{$i} {
+		width: calc(#{$i} * 100% / 12);
+	}
+}
+@for $i from 1 through 12 {
+	@include media(set-max-w, $md) {
+		.col-md-#{$i} {
+			width: calc(#{$i} * 100% / 12);
+		}
+	}
+}
+@for $i from 1 through 12 {
+	@include media(set-max-w, $sm) {
+		.col-sm-#{$i} {
+			width: calc(#{$i} * 100% / 12);
+		}
+	}
+}
+

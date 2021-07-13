@@ -1,0 +1,106 @@
+-
+    var products = [
+        {
+            'img': 'catg-1.png',
+            'name': 'コンパクト<br>マシニングセンタ'
+        },
+        {
+            'img': 'catg-1.png',
+            'name': 'コンパクト<br>マシニングセンタ'
+        },
+        {
+            'img': 'catg-1.png',
+            'name': 'コンパクト<br>マシニングセンタ'
+        },
+        {
+            'img': 'catg-1.png',
+            'name': 'コンパクト<br>マシニングセンタ'
+        },
+        {
+            'img': 'catg-1.png',
+            'name': 'コンパクト<br>マシニングセンタ'
+        },
+        {
+            'img': 'catg-1.png',
+            'name': 'コンパクト<br>マシニングセンタ'
+        },
+        {
+            'img': 'catg-1.png',
+            'name': 'コンパクト<br>マシニングセンタ'
+        },
+        {
+            'img': 'catg-1.png',
+            'name': 'コンパクト<br>マシニングセンタ'
+        },
+        {
+            'img': 'catg-1.png',
+            'name': 'コンパクト<br>マシニングセンタ'
+        },
+        {
+            'img': 'catg-1.png',
+            'name': 'コンパクト<br>マシニングセンタ'
+        },
+        {
+            'img': 'catg-1.png',
+            'name': 'コンパクト<br>マシニングセンタ'
+        },
+        {
+            'img': 'catg-1.png',
+            'name': 'コンパクト<br>マシニングセンタ'
+        },
+    ]
+header.header
+    .header-inner
+        a(href="/").logo
+            img(src="@path/img/logo.png", alt="")
+        .menu
+            .menu-inner
+                .menu-links.flex
+                    .menu-link(data-menu="home")
+                        a(href=`/`).menu-txt
+                            span Home
+                    .menu-link(data-menu="business")
+                        a(href=`our-business.html`).menu-txt
+                            span our business
+                    .menu-link(data-menu="product")
+                        a(href=`/brand.html`).menu-txt.has-submenu.icon-expand
+                            span product
+                        .submenu
+                            .submenu-inner
+                                .font-16.font-bold PROCESSING CATEGORY
+                                .row
+                                    each product in products
+                                        .col-3
+                                            a(href="").submenu-pro
+                                                .pro-img
+                                                    img(src=`@path/img/category/${product.img}`, alt="")
+                                                p.pro-name!= product.name
+                    .menu-link(data-menu="about")
+                        a(href=`/about-us.html`).menu-txt.has-submenu.icon-expand
+                            span about us
+                    .menu-link(data-menu="news")
+                        a(href=`/news.html`).menu-txt
+                            span news
+                    .menu-link(data-menu="contact")
+                        a(href=`/contact-input.html`).menu-txt
+                            span contact
+                .menu-search
+                    .input
+                        input(type="text" placeholder="Enter your keyword")
+                    .language
+                        .language-current.icon-expand
+                            img(src="@path/img/icon/flag.png", alt="")
+                            .language-label Language
+                        .language-list
+                            a.language-link
+                                img(src="@path/img/icon/flag.png", alt="")
+                            a.language-link
+                                img(src="@path/img/icon/flag.png", alt="")
+                            a.language-link
+                                img(src="@path/img/icon/flag.png", alt="")
+        .menu-sp
+            .btn-menu
+                .btn-menu__icon
+                    <svg xmlns="http://www.w3.org/2000/svg" width="53.094" height="40.443" viewBox="0 0 53.094 40.443"><g transform="translate(0 -61)"><g transform="translate(12.444 61)"><path class="a" d="M155.983,61H124.666a4.666,4.666,0,1,0,0,9.333h31.317a4.666,4.666,0,1,0,0-9.333Z" transform="translate(-120 -61)"/></g><g transform="translate(12.444 76.555)"><path class="a" d="M155.983,211H124.666a4.666,4.666,0,0,0,0,9.333h31.317a4.666,4.666,0,0,0,0-9.333Z" transform="translate(-120 -211)"/></g><g transform="translate(12.444 92.11)"><path class="a" d="M155.983,361H124.666a4.666,4.666,0,0,0,0,9.333h31.317a4.666,4.666,0,0,0,0-9.333Z" transform="translate(-120 -361)"/></g><g transform="translate(0 61)"><path class="a" d="M4.666,61a4.666,4.666,0,1,0,4.666,4.666A4.671,4.671,0,0,0,4.666,61Z" transform="translate(0 -61)"/></g><g transform="translate(0 76.555)"><path class="a" d="M4.666,211a4.666,4.666,0,1,0,4.666,4.666A4.671,4.671,0,0,0,4.666,211Z" transform="translate(0 -211)"/></g><g transform="translate(0 92.11)"><path class="a" d="M4.666,361a4.666,4.666,0,1,0,4.666,4.666A4.672,4.672,0,0,0,4.666,361Z" transform="translate(0 -361)"/></g></g></svg>
+
+        

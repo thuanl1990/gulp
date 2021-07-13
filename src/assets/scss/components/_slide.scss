@@ -1,0 +1,126 @@
+.splide {
+    &.black-dots {
+        .splide__pagination__page {
+            background-color: $black;
+        }
+    }
+    &__list {
+        will-change: auto;
+    }
+    &__pagination {
+        justify-content: flex-end;
+        bottom: 18px;
+
+        &__page {
+            width: 10px;
+            height: 10px;
+            background-color: $white;
+            margin: 0 0 0 16px;
+            opacity: 1;
+
+            &.is-active {
+                transform: scale(1);
+                background-color: $danger-cl !important;
+            }
+        }
+    }
+}
+
+.tns {
+    &-outer {
+        position: relative;
+    }
+    &-controls {
+        
+        button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: $black;
+            border: none;
+            z-index: 3;
+
+            @include media(set-max-w, $sm) {
+                width: 25px;
+                height: 25px;
+            }
+            &:focus {
+                outline: none;
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                top: 10px;
+
+                @include media(set-max-w, $sm) {
+                    top: 8px;
+                }
+            }
+        }
+        [data-controls="next"] {
+            right: -15px;
+
+            @include media(set-max-w, $sm) {
+                right: -12px;
+            }
+            &:after {
+                left: 7px;
+                @include chevron(4px, 3px, $white, right);
+
+                @include media(set-max-w, $sm) {
+                    @include chevron(3px, 2px, $white, right)
+                }
+            }
+        }
+        [data-controls="prev"] {
+            left: -15px;
+
+            @include media(set-max-w, $sm) {
+                left: -12px;
+            }
+            &:after {
+                left: 12px;
+                @include chevron(4px, 3px, $white, left);
+                
+                @include media(set-max-w, $sm) {
+                    left: 10px;
+                    @include chevron(3px, 2px, $white, left);
+                }
+            }
+        }
+    }
+    &-nav {
+        position: absolute;
+        left: 0;
+        bottom: 20px;
+        display: flex;
+        justify-content: flex-end;
+        padding: 0 20px;
+        width: 100%;
+        z-index: 2;
+
+        button {
+            width: 10px;
+            height: 10px;
+            background-color: $white;
+            border-radius: 50%;
+            border: none;
+            box-shadow: none;
+            opacity: 1;
+            
+            &:not(:first-child) {
+                margin: 0 0 0 16px;
+            }
+            @include media(set-max-w, $sm) {
+                width: 8px;
+                height: 8px;
+            }
+        }
+        &-active {
+            background-color: $danger-cl !important;
+        }
+    }
+}

@@ -1,0 +1,176 @@
+.breadcrumb {
+    display: flex;
+    padding-top: 8px;
+    padding-bottom: 13px;
+    margin-right: -5px;
+    margin-left: -5px;
+    @include media(set-min-w, $md) {
+        padding-top: 17px;
+        margin-right: -12px;
+        margin-left: -12px;
+    }
+    @include media(set-max-w, $sm) {
+        flex-wrap: wrap;
+    }
+
+    &-item {
+        padding-right: 5px;
+        padding-left: 5px;
+        font-size: 14px;
+        letter-spacing: -.07px;
+        @include media(set-min-w, $md) {
+            padding-right: 12px;
+            padding-left: 12px;
+            font-size: 18px;
+            letter-spacing: -.09px;
+        }
+        @media (max-width: 374.98px) {
+            font-size: 12px;
+        }
+
+        &:last-child {
+            @include truncate(100%);
+        }
+
+        & + & {
+            &::before {
+                content: "|";
+                padding-right: 12px;
+                font-weight: 400;
+                @include media(set-min-w, $md) {
+                    padding-right: 24px;
+                }
+            }
+        }
+
+        &.active {
+            font-weight: 700;
+        }
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-right: -5px;
+    margin-left: -5px;
+    @include media(set-min-w, $md) {
+        justify-content: flex-end;
+    }
+
+    .page-item {
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+    .active .page-link {
+        color: $yellow;
+        font-weight: 700;
+
+        &::before {
+            content: "";
+            position: absolute;
+            right: 5px;
+            bottom: 5px;
+            left: 5px;
+            height: 1px;
+            background-color: $yellow;
+        }
+    }
+
+    .page-link {
+        position: relative;
+        padding: 5px;
+        color: $black;
+        font-size: 17px;
+        font-weight: 300;
+        letter-spacing: -.09px;
+        @include media(set-min-w, $md) {
+            letter-spacing: 0;
+        }
+    }
+}
+
+.pagination-link {
+    display: flex;
+    justify-content: center;
+    margin-right: -15px;
+    margin-left: -15px;
+    @include media(set-max-w, $md) {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    @include media(set-min-w, $md) {
+        margin-right: -25px;
+        margin-left: -25px;
+    }
+
+    .page-item {
+        padding-right: 15px;
+        padding-left: 15px;
+        line-height: 1.75;
+        font-size: 16px;
+        @include media(set-min-w, $md) {
+            padding-right: 25px;
+            padding-left: 25px;
+        }
+
+        + .page-item {
+            &::before {
+                content: "|";
+                display: inline-block;
+                margin-right: 17px;
+                transform: translateX(-7px);
+                @include media(set-min-w, $md) {
+                    transform: translateX(-15px);
+                }
+            }
+        }
+
+        &:first-child {
+            .page-link {
+                &::before {
+                    content: "";
+                    display: inline-block;
+                    margin-right: 7px;
+                    border-top: 5px solid transparent;
+                    border-bottom: 5px solid transparent;
+                    border-right: 7px solid #363636;
+                }
+            }
+        }
+
+        //&:nth-child(2) {
+        //    &::before,
+        //    &::after {
+        //        content: "|";
+        //    }
+        //
+        //    &::before {
+        //        margin-right: 17px;
+        //    }
+        //
+        //    &::after {
+        //        margin-left: 17px;
+        //    }
+        //}
+
+        &:last-child {
+            .page-link {
+                &::after {
+                    content: "";
+                    display: inline-block;
+                    margin-left: 7px;
+                    border-top: 5px solid transparent;
+                    border-bottom: 5px solid transparent;
+                    border-left: 7px solid #363636;
+                }
+            }
+        }
+    }
+
+    .page-link {
+        padding: 5px;
+        color: #363636;
+    }
+}

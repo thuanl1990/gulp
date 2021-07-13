@@ -1,0 +1,1 @@
+module.exports = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || ( navigator.maxTouchPoints == 5 &&  /WebKit/.test(navigator.userAgent)))

@@ -1,0 +1,18 @@
+.modal(style="display: none" data-modal="catalog")
+	.modal-bg(data-close="catalog")
+	.modal-inner 
+		.modal-wrapper 
+			.modal-content.contact
+				.modal-close(data-close="catalog")
+					img(src="@path/img/icon/icon-close.svg", alt="")
+				form.form-body
+					h3.title-info Download catalog 
+					p.text-center.mb-20 Please input your email to get catalog
+					.col-line
+						input(type='text' name='name' placeholder='Name')
+					.col-line
+						input(type='text' name='company' placeholder='Company')
+					.col-line
+						input(type='email' name='email' placeholder='Email')
+					.col-line
+						input(type='submit' value='Download catalog')

@@ -1,0 +1,37 @@
+// $breakpoint
+$xl: 1440;
+$lg: 1200;
+$md: 992;
+$sm: 767;
+$xs: 350;
+$yellow: #f1b921;
+$darkBlue: #001328;
+
+:root {
+    --xl: #{$xl}px;
+    --lg: #{$lg}px;
+    --md: #{$md}px;
+    --sm: #{$sm}px;
+    --xs: #{$xs}px;
+}
+
+$screen: 100vw;
+$container: 1370px;
+$container-xl: 1100px;
+$container-lg: 920px;
+$container-md: 700px;
+$container-sm: 450px;
+$container-xs: 335px;
+
+$container-padding: 15px;
+
+$scrollbar: var(--scrollbar);
+
+$font-montserrat: 'Montserrat', sans-serif;
+$font-noto: 'Noto Sans JP', sans-serif;
+$font-mincho: 'Yu Mincho', sans-serif;
+
+$red-gradient: linear-gradient(-35deg, #f09454 28%, #e53764, #d32d26 75%);
+$green-gradient: linear-gradient(140deg, #93eec5 40%, #40d877 75%);
+
+$image-path: "../img/";

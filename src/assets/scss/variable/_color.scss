@@ -1,0 +1,46 @@
+// Color 
+:root {
+	--main: #0F5074;
+	--danger: #f83600;
+	--dark: #343a3f;
+	--success: #3d7625;
+}
+
+$main-cl: #0F5074;
+$main-light-cl: #f6f0e3;
+$txt-dark: #343a3f;
+$dark-cl: #343a3f;
+$danger-cl: #f83600;
+$danger-cl-light: #ff8e44;
+$sucess-cl: var(--success);
+$sucess-cl--light: #93eec5;
+
+// color
+$main: var(--main);
+$white: #fff;
+$black: #000;
+$dark-silver: #707070;
+
+.main-cl {
+	color: $main-cl
+}
+
+.danger-cl {
+	color: $danger-cl;
+}
+
+.main-bg {
+	background-color: $main-cl
+}
+
+.dark-cl {
+	color: $dark-cl;
+}
+
+.dark-bg {
+	background-color: $dark-cl;
+}
+
+.white {
+	color: $white;
+}
